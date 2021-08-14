@@ -28,9 +28,6 @@ body {
     flex: 0.9;
 }
 
-.app__right {
-}
-
 @media (max-width: 990px) {
     .app {
         flex-direction: column;

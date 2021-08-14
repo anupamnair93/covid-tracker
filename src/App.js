@@ -12,6 +12,7 @@ import {
 import InfoBox from './components/InfoBox/InfoBox';
 import Map from './components/common/Map/Map';
 import Table from './components/common/Table/Table';
+import LineGraph from './components/common/LineGraph/LineGraph';
 
 import { sortData } from './utils/utils';
 
@@ -109,7 +110,7 @@ function App() {
                     <h3>Live cases by country</h3>
                     <Table countries={tableData} />
                     <h3>Worldwide new cases</h3>
-                    {/* Graph */}
+                    <LineGraph />
                 </CardContent>
             </Card>
         </div>
