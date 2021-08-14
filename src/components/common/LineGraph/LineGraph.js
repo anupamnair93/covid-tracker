@@ -17,7 +17,6 @@ const options = {
         intersect: false,
         callbacks: {
             label: function (tooltipItem) {
-                debugger;
                 return numeral(tooltipItem.value).format('+0,0');
             },
         },
@@ -48,13 +47,13 @@ const options = {
     },
 };
 
-const buildChartData = (data, caseType = 'cases') => {
-    const chartData = [];
+const buildChartData = (data, caseType) => {
+    let chartData = [];
     let lastDataPoint;
 
     for (let date in data.cases) {
         if (lastDataPoint) {
-            const newDataPoint = {
+            let newDataPoint = {
                 x: date,
                 y: data[caseType][date] - lastDataPoint,
             };
@@ -68,17 +67,17 @@ const buildChartData = (data, caseType = 'cases') => {
     return chartData;
 };
 
-function LineGraph({ caseType = 'cases' }) {
+function LineGraph({ caseType, ...props }) {
     const [data, setData] = useState({});
 
     useEffect(() => {
         const fetchData = async () => {
             await fetch(
-                'https://disease.sh/v3/covid-19/historical/all?lastdays=120'
+                'https://disease.sh/v3/covid-19/historical/all?lastdays=90'
             )
                 .then((response) => response.json())
                 .then((data) => {
-                    const chartData = buildChartData(data);
+                    let chartData = buildChartData(data, caseType);
                     setData(chartData);
                 });
         };
@@ -87,7 +86,7 @@ function LineGraph({ caseType = 'cases' }) {
     }, [caseType]);
 
     return (
-        <div>
+        <div className={props.className}>
             {data?.length > 0 && (
                 <Line
                     data={{
