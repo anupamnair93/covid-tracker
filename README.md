@@ -1,10 +1,20 @@
 # <img src="public/covid-19.ico" alt="covid-19-tracker" width="25"/> Covid-19 Tracker
 
-## Getting Started with Create React App
+[Live Site](https://covid-tracker-19ce4.web.app/)
+
+![screen-gif](public/covid-19-tracker.gif)
+
+---
+
+## Covid 19 Tracker in react using [Open Disease Data API](https://disease.sh/)
+
+---
+
+### Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Available Scripts
 
 In the project directory, you can run:
 
@@ -15,11 +25,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
